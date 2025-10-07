@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knight Sport — Sale & Deals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html">Knight<span class="accent">Sport</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation"></button>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Products ▾</button>
+      <div class="dropdown-content">
+        <a href="products.html">All Products</a>
+        <a href="shoes.html">Shoes</a>
+        <a href="clothing.html">Clothing</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+    </div>
+    <a href="sale.html" class="active">Sale/Deals</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero sale">
+  <h1>Mid-Season Sale</h1>
+  <p class="muted">Save big on top footwear, apparel, and gear. Discounts applied automatically in cart!</p>
+  <a class="btn btn--primary" href="products.html">Shop All</a>
+</section>
+
+<section class="section container">
+  <header class="section__head"><h2>Today’s Deals</h2></header>
+  <div class="product-list">
+
+    <!-- Tempo Trainer -->
+    <article class="product" data-name="Tempo Trainer" data-price="127" data-discount="0.20">
+      <img src="FINIS_Temp_Trainer.jpg" alt="Tempo Trainer" />
+      <div class="product__body">
+        <h3>Tempo Trainer</h3>
+        <p class="muted">High-performance running shoe built for speed.</p>
+        
+        <!-- Price with strike -->
+        <div class="price">
+          <s>$127</s> <strong>$101.60</strong> <span class="badge">-20%</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+          <button class="btn btn--primary btn--sm add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Aero Tee -->
+    <article class="product" data-name="Aero Tee" data-price="53" data-discount="0.25">
+      <img src="2XUMen_Aero_Mesh_Tee.jpg" alt="Aero Tee" />
+      <div class="product__body">
+        <h3>Aero Tee</h3>
+        <p class="muted">Lightweight training tee with moisture control.</p>
+        <div class="price">
+          <s>$53</s> <strong>$39.75</strong> <span class="badge">-25%</span>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--primary btn--sm add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pro Backpack -->
+    <article class="product" data-name="Pro Backpack" data-price="189" data-discount="0.15">
+      <img src="Pro-Sports_Waterproof_Backpack.jpg" alt="Pro Backpack" />
+      <div class="product__body">
+        <h3>Pro Backpack</h3>
+        <p class="muted">Spacious and durable bag for all your gear.</p>
+        <div class="price">
+          <s>$189</s> <strong>$160.65</strong> <span class="badge">-15%</span>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--primary btn--sm add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footnote">© <span id="year"></span> KnightSport.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

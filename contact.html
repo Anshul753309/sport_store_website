@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knight Sport — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html">Knight<span class="accent">Sport</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation"></button>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Products ▾</button>
+      <div class="dropdown-content">
+        <a href="products.html">All Products</a>
+        <a href="shoes.html">Shoes</a>
+        <a href="clothing.html">Clothing</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="equipment.html">Equipment</a>
+      </div>
+    </div>
+    <a href="sale.html">Sale/Deals</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="page-hero slim">
+  <h1>Contact Us</h1>
+  <p class="muted">We’d love to hear from you. Send us a message below!</p>
+</section>
+
+<section class="section container">
+  <div class="contact-wrapper">
+    <form id="contactForm" class="form">
+      <div class="form__group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+        <div class="error">Name is required</div>
+      </div>
+
+      <div class="form__group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <div class="error">Valid email is required</div>
+      </div>
+
+      <div class="form__group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="error">Message cannot be empty</div>
+      </div>
+
+      <button type="submit" class="btn btn--primary">Send Message</button>
+
+      <p class="form__success">✅ Thank you! Your message has been sent.</p>
+    </form>
+
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:support@knightsport.com">support@knightsport.com</a></p>
+      <p>Phone: +1 (555) 123-4567</p>
+      <p>Address: 123 Sports Ave, Surrey, BC</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footnote">© <span id="year"></span> KnightSport.</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
