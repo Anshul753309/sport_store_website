@@ -1,0 +1,122 @@
+[
+  {
+    "id": "p1",
+    "name": "Nike Sneaker Running Shoes",
+    "category": "Shoes",
+    "brand": "Nike",
+    "price": 219,
+    "desc": "Engineered with a carbon-plated midsole and ultra-light mesh upper for explosive propulsion and breathability on race day.",
+    "url": "products.html#p1",
+    "image": "NikeSneakerRunningShoes.jpg"
+  },
+  {
+    "id": "p2",
+    "name": "Adidas Adizero Football Shoe",
+    "category": "Shoes",
+    "brand": "Adidas",
+    "price": 159,
+    "desc": "Lightweight football shoe with sprint-frame traction and pro-level cushioning for agility, acceleration, and stability.",
+    "url": "products.html#p2",
+    "image": "adidasAdizeroFootballShoe.jpg"
+  },
+  {
+    "id": "p3",
+    "name": "Yonex Power Cushion 65Z4",
+    "category": "Shoes",
+    "brand": "Yonex",
+    "price": 139,
+    "desc": "Court shoe with Power Cushion+ technology that absorbs shock and converts impact into energy for explosive footwork.",
+    "url": "products.html#p3",
+    "image": "YonexPowerCushion65Z4.jpg"
+  },
+  {
+    "id": "p4",
+    "name": "Joma Honduras Away Jersey",
+    "category": "Clothing",
+    "brand": "Joma",
+    "price": 45,
+    "desc": "Ultra-breathable match jersey with moisture-wicking fibers and ergonomic paneling for 90 minutes of high-intensity play.",
+    "url": "products.html#p4",
+    "image": "JomaHondurasAwayJersey .jpg"
+  },
+  {
+    "id": "p5",
+    "name": "PRIMESTY Personalized Badminton Shirts",
+    "category": "Clothing",
+    "brand": "PRIMESTY",
+    "price": 89,
+    "desc": "Lightweight, sweat-wicking shirts with customizable fit and aerodynamic cut for competitive badminton players.",
+    "url": "products.html#p5",
+    "image": "PRIMESTY_Personalized_Badminton_Shirts.jpg"
+  },
+  {
+    "id": "p6",
+    "name": "RDX Men’s Running Shorts",
+    "category": "Clothing",
+    "brand": "RDX",
+    "price": 69,
+    "desc": "Stretch running shorts with reinforced seams, mesh ventilation, and compression lining for stability and breathability.",
+    "url": "products.html#p6",
+    "image": "RDXMenRunningShorts.jpg"
+  },
+  {
+    "id": "p7",
+    "name": "Garmin Forerunner 970 GPS Smartwatch",
+    "category": "Accessories",
+    "brand": "Garmin",
+    "price": 199,
+    "desc": "Premium GPS running and triathlon watch with VO2 max insights, recovery metrics, and advanced performance analytics.",
+    "url": "products.html#p7",
+    "image": "GarminForerunner970.jpg"
+  },
+  {
+    "id": "p8",
+    "name": "Adidas Men's Superlite 3 Training Cap",
+    "category": "Accessories",
+    "brand": "Adidas",
+    "price": 29,
+    "desc": "AEROREADY moisture-wicking training cap with UPF 50+ sun protection and ventilated side panels.",
+    "url": "products.html#p8",
+    "image": "adidasMenSuperlite3Training Cap.jpg"
+  },
+  {
+    "id": "p9",
+    "name": "Bodyprox Soccer Shin Guards",
+    "category": "Accessories",
+    "brand": "Bodyprox",
+    "price": 79,
+    "desc": "High-impact shin guards with compression sleeves for secure fit, combining mobility with pro-grade protection.",
+    "url": "products.html#p9",
+    "image": "BodyproxSoccerShin.jpg"
+  },
+  {
+    "id": "p10",
+    "name": "Yonex ASTROX 100 ZZ Badminton Racquet",
+    "category": "Equipment",
+    "brand": "Yonex",
+    "price": 199,
+    "desc": "Hyper Slim Shaft racquet with Rotational Generator System for explosive smashes and precise control.",
+    "url": "products.html#p10",
+    "image": "Yonex_ASTROX_100ZZ_Badminton_Racquet.jpg"
+  },
+  {
+    "id": "p11",
+    "name": "Pro Agility Ladder",
+    "category": "Equipment",
+    "brand": "Pro",
+    "price": 39,
+    "desc": "Durable agility ladder designed to improve quickness, footwork, and coordination in high-intensity drills.",
+    "url": "products.html#p11",
+    "image": "Pro_Agility_Ladder.jpg"
+  },
+  {
+    "id": "p12",
+    "name": "WIKDAY Resistance Bands",
+    "category": "Equipment",
+    "brand": "WIKDAY",
+    "price": 59,
+    "desc": "Multiple-tension resistance bands ideal for mobility, strength training, and rehabilitation work.",
+    "url": "products.html#p12",
+    "image": "WIKDAY_Resistance_Band.jpg"
+  }
+]

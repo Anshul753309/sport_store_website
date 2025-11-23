@@ -28,6 +28,12 @@
 
 <section class="page-hero slim">
   <h1>Products</h1>
+  <section class="container" id="product-search">
+  <h2>Search Products</h2>
+  <input id="search-box" placeholder="Search by name, brand, or category">
+  <div id="search-results"></div>
+</section>
+
   <p class="muted">Select a category to explore pro-grade gear.</p>
 </section>
 
@@ -45,7 +51,7 @@
     <!-- Nike -->
     <article class="product">
   <img src="NikeSneakerRunningShoes.jpg" alt="Nike Sneaker Running Shoes" />
-  <div class="product__body">
+  <div class="product__body" id="p1">
     <h3>Nike Sneaker Running Shoes</h3>
     <p class="muted">Featherlight, plated midsole for race day.</p>
     <div class="price">$219</div>
@@ -72,7 +78,7 @@
 
 
     <!-- Adidas -->
-    <article class="product">
+    <article class="product" id="p2">
       <img src="adidasAdizeroFootballShoe.jpg" alt="Adidas Adizero Football Shoe" />
       <div class="product__body">
         <h3>Adidas Adizero Football Shoe</h3>
@@ -98,7 +104,7 @@
     </article>
     
     <!-- Yonex -->
-    <article class="product">
+    <article class="product" d="p3">
       <img src="YonexPowerCushion65Z4.jpg" alt="Yonex Power Cushion 65Z4" />
       <div class="product__body">
         <h3>Yonex Power Cushion 65Z4</h3>
@@ -130,7 +136,7 @@
   <div class="product-list">
     
     <!-- Joma Jersey -->
-    <article class="product">
+    <article class="product" id="p4">
       <img src="JomaHondurasAwayJersey .jpg" alt="Joma Honduras Away Jersey" />
       <div class="product__body">
         <h3>Joma Honduras Away Jersey</h3>
@@ -159,7 +165,7 @@
     </article>
 
     <!-- PRIMESTY Badminton Shirt -->
-    <article class="product">
+    <article class="product" id="p5">
       <img src="PRIMESTY_Personalized_Badminton_Shirts.jpg" alt="PRIMESTY Personalized Badminton Shirts" />
       <div class="product__body">
         <h3>PRIMESTY Personalized Badminton Shirts</h3>
@@ -186,7 +192,7 @@
     </article>
 
     <!-- RDX Running Shorts -->
-    <article class="product">
+    <article class="product" id="p6">
       <img src="RDXMenRunningShorts.jpg" alt="RDX Men’s Running Shorts" />
       <div class="product__body">
         <h3>RDX Men’s Running Shorts</h3>
@@ -220,7 +226,7 @@
   <div class="product-list">
 
     <!-- Sport Watch -->
-    <article class="product">
+    <article class="product" id="p7">
       <img src="GarminForerunner970.jpg" alt="Garmin Forerunner 970, Premium GPS Running and Triathlon Smartwatch" />
       <div class="product__body">
         <h3>Garmin Forerunner 970, Premium GPS Running and Triathlon Smartwatch</h3>
@@ -247,7 +253,7 @@
     </article>
 
     <!-- Training Cap -->
-    <article class="product">
+    <article class="product" id="p8">
       <img src="adidasMenSuperlite3Training Cap.jpg" alt="Adidas Men's Superlite 3 Training Cap" />
       <div class="product__body">
         <h3>Adidas Men's Superlite 3 Training Cap</h3>
@@ -274,7 +280,7 @@
     </article>
 
     <!-- Soccer Shin Guards -->
-    <article class="product">
+    <article class="product" id="p9">
       <img src="BodyproxSoccerShin.jpg" alt="Bodyprox Soccer Shin Guards Sleeves for Men, Women and Youth" />
       <div class="product__body">
         <h3>Bodyprox Soccer Shin Guards</h3>
@@ -308,7 +314,7 @@
   <div class="product-list">
 
     <!-- Yonex Racquet -->
-    <article class="product">
+    <article class="product" id="p10">
       <img src="Yonex_ASTROX_100ZZ_Badminton_Racquet.jpg" alt="Yonex ASTROX 100 ZZ Badminton Racquet" />
       <div class="product__body">
         <h3>Yonex ASTROX 100 ZZ Badminton Racquet</h3>
@@ -334,7 +340,7 @@
     </article>
 
     <!-- Agility Ladder -->
-    <article class="product">
+    <article class="product" id="p11">
       <img src="Pro_Agility_Ladder.jpg" alt="Pro Agility Ladder" />
       <div class="product__body">
         <h3>Pro Agility Ladder</h3>
@@ -360,7 +366,7 @@
     </article>
 
     <!-- Resistance Bands -->
-    <article class="product">
+    <article class="product" id="p12">
       <img src="WIKDAY_Resistance_Band.jpg" alt="WIKDAY Resistance Bands" />
       <div class="product__body">
         <h3>WIKDAY Resistance Bands</h3>
@@ -391,6 +397,106 @@
 <footer class="site-footer">
   <div class="footnote">© <span id="year"></span> KnightSport.</div>
 </footer>
-<script src="script.js"></script>
+<script src="https://unpkg.com/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+<script>
+(async () => {
+  // 1) Load products.json
+  const res = await fetch('data/products.json');
+  const products = await res.json();
+
+  // 2) Build FlexSearch index
+  const index = new FlexSearch.Document({
+    tokenize: 'forward',
+    document: {
+      id: 'id',
+      index: ['name', 'brand', 'category', 'desc']
+    }
+  });
+
+  products.forEach(p => {
+    index.add(p.id, p);
+  });
+
+  const input = document.getElementById('search-box');
+  const resultsDiv = document.getElementById('search-results');
+
+  // 3) Search when user types
+  input.addEventListener('input', (e) => {
+    const q = e.target.value.trim();
+
+    if (!q) {
+      resultsDiv.innerHTML = '';
+      return;
+    }
+
+    const groups = index.search(q, { enrich: true, limit: 20 });
+    const ids = new Set();
+
+    groups.forEach(group => {
+      group.result.forEach(hit => {
+        if (typeof hit === 'string' || typeof hit === 'number') {
+          ids.add(hit);
+        } else if (hit && hit.id) {
+          ids.add(hit.id);
+        }
+      });
+    });
+
+    const hits = products.filter(p => ids.has(p.id));
+
+    if (!hits.length) {
+      resultsDiv.innerHTML = '<p>No products found.</p>';
+      return;
+    }
+
+    resultsDiv.innerHTML = hits.map(p => `
+      <div class="search-item">
+        <strong>${p.name}</strong><br>
+        ${p.brand} · ${p.category} · $${p.price}<br>
+        <small>${p.desc}</small><br>
+        <a href="#${p.id}"
+           class="view-product-link"
+           data-id="${p.id}"
+           data-section="${p.category.toLowerCase()}">
+           View product
+        </a>
+      </div>
+    `).join('');
+  });
+
+  // 4) Handle "View product" click
+  resultsDiv.addEventListener('click', (e) => {
+    const link = e.target.closest('.view-product-link');
+    if (!link) return;
+
+    e.preventDefault();
+
+    const id = link.dataset.id;
+    const sectionId = link.dataset.section;
+
+    // Switch tabs
+    document.querySelectorAll('.section').forEach(sec =>
+      sec.classList.remove('active')
+    );
+    document.querySelectorAll('.tab').forEach(tab =>
+      tab.classList.remove('active')
+    );
+
+    const sectionEl = document.getElementById(sectionId);
+    if (sectionEl) sectionEl.classList.add('active');
+
+    const tabEl = document.querySelector(`.tab[data-target="${sectionId}"]`);
+    if (tabEl) tabEl.classList.add('active');
+
+    // Scroll card into view
+    const productEl = document.getElementById(id);
+    if (productEl) {
+      productEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
+</script>
+
+
 </body>
 </html>

@@ -411,7 +411,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-
 
 /* Tab sections hidden by default (ONLY for products page) */
 body.products-page {
-  overflow: hidden; /* lock page scrolling only here */
+  overflow: auto; /* lock page scrolling only here */
 }
 
 .products-page .section {
@@ -435,3 +435,27 @@ body.products-page {
   border-radius: 6px;
   margin-left: 8px;
 }
+
+#product-search {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+#search-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+#search-results {
+  margin-top: 8px;
+}
+
+.search-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
