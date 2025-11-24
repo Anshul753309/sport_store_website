@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anshul753309.github.io/sport_store_website/sitemap.xml
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/products.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/sale.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/cart.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/about.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://anshul753309.github.io/sport_store_website/contact.html</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
